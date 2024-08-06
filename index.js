@@ -6,12 +6,19 @@ const express = require("express");
 
 const token = '7351379437:AAG3HCAVluQmy2aCXIIyc60taDkdDvhYIuU'
 const dbURI = 'mongodb+srv://nsewerda04:soket775@cluster0.kkg0ems.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const PORT = process.env.PORT || 3000;
 
 
 
 const bot = new TelegramApi(token);
 
 bot.setWebHook('https://tg-bot-app-black.vercel.app/' + bot.token);
+
+bot.getWebHookInfo().then((info) => {
+    console.log(info);
+});
+
+
 
 
 let userState = {};
@@ -30,9 +37,15 @@ app.get("/", async (req, res) => {
     res.send("Work!");
 })
 
-app.listen(3000, ()=> {
+app.listen(PORT, ()=> {
     console.log('Server has been working')
 })
+
+
+app.post('/webhook', express.json(), (req, res) => {
+    bot.processUpdate(req.body);
+    res.sendStatus(200);
+});
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
