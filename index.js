@@ -10,15 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 
 
-const bot = new TelegramApi(token);
-
-bot.setWebHook('https://tg-bot-app-plum.vercel.app/webhook');
-
-bot.getWebHookInfo().then((info) => {
-    console.log(info);
-});
-
-
+const bot = new TelegramApi(token, {polling: true});
 
 
 let userState = {};
