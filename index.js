@@ -9,7 +9,7 @@ const dbURI = 'mongodb+srv://nsewerda04:soket775@cluster0.kkg0ems.mongodb.net/?r
 
 
 
-const bot = new TelegramApi(token, {polling: true});
+const bot = new TelegramApi(token);
 
 bot.setWebHook('https://tg-bot-app-black.vercel.app/' + bot.token);
 
