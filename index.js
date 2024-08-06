@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 3000;
 
 const bot = new TelegramApi(token);
 
-bot.setWebHook('https://tg-bot-app-black.vercel.app/webhook');
+
+bot.deleteWebHook('https://tg-bot-app-black.vercel.app/webhook');
 
 bot.getWebHookInfo().then((info) => {
     console.log(info);
