@@ -69,7 +69,7 @@ bot.onText(/\/start/, async (msg) => {
         await bot.sendMessage(chatId, main_text, {parse_mode: "HTML", reply_markup: JSON.stringify({
                 inline_keyboard: [
                     [{text: "💬 Общий чат", url: "https://t.me/+7lDgYSLAg3Q1ZWQ6", callback_data: "chat"}],
-                    [{text: "Выплаты 💰", url: "https://t.me/+7lDgYSLAg3Q1ZWQ6", callback_data: "chat"}, {text: "Панель для работы 📘", url: "https://t.me/+7lDgYSLAg3Q1ZWQ6"}],
+                    [{text: "Выплаты 💰", url: "https://t.me/+7lDgYSLAg3Q1ZWQ6", callback_data: "chat"}, {text: "Панель для работы 📘", url: "https://t.me/InfTeamBot"}],
                     [{text: "Мануалы 📂", url: "https://t.me/+7lDgYSLAg3Q1ZWQ6", callback_data: "chat"}, {text: "Правила 📄", callback_data: "main_menu_rules"}],
                 ]
             })})
